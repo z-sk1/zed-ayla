@@ -1,7 +1,13 @@
-Language support for ayla-lang
+# ayla Extension
 
+Language support for **ayla-lang**.
 
-Adds syntax highlighting, and a basic LSP.
+## Features
+- Syntax highlighting
+- Basic Language Server support (hover, go-to-definition)
 
+## Requirements
+This extension requires `ayla-lang` and the Ayla LSP to be installed separately.
 
-If you want to install ayla-lang and the LSP please see [this](https://github.com/z-sk1/ayla-lang/tree/main/INSTRUCTIONS.md)
+Installation instructions can be found here:  
+https://github.com/z-sk1/ayla-lang/tree/main/INSTRUCTIONS.md

@@ -7,7 +7,7 @@ Language support for **ayla-lang**.
 - Basic Language Server support (hover, go-to-definition)
 
 ## Requirements
-This extension requires `ayla-lang` and the Ayla LSP to be installed separately.
+This extension requires `ayla-lang` and the Ayla LSP, `elen`, to be installed separately.
 
 Installation instructions can be found here:  
 https://github.com/z-sk1/ayla-lang/tree/main/INSTRUCTIONS.md

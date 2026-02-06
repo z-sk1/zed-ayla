@@ -4,7 +4,7 @@ version = "0.1.0"
 schema_version = 1
 authors = ["Ziad Skafi"]
 description = "Language support for the ayla programming language"
-repository = "https://github.com/ziad-skafi/zed-ayla"
+repository = "https://github.com/z-sk1/zed-ayla"
 
 [language]
 name = "ayla"

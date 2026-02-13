@@ -1,6 +1,34 @@
-((identifier) @keyword
-  (#match? @keyword "^(egg|rock|fun|type|struct|enum|int|float|string|bool|thing|map|ayla|elen|four|why|back|kitkat|next|decide|when|otherwise|spawn|with|it|in|range)$"))
+keyword: $ => choice(
+  "egg",
+  "rock",
+  "fun",
+  "type",
+  "struct",
+  "enum",
+  "int",
+  "float",
+  "string",
+  "bool",
+  "thing",
+  "map",
+  "ayla",
+  "elen",
+  "four",
+  "why",
+  "back",
+  "kitkat",
+  "next",
+  "decide",
+  "when",
+  "otherwise",
+  "spawn",
+  "with",
+  "it",
+  "in",
+  "range"
+),
 
+(keyword) @keyword
 
 (boolean) @constant.builtin
 (nil) @constant.builtin
@@ -9,6 +37,12 @@
 (type_identifier) @type
 (struct_decl
   name: (type_identifier) @type.definition)
+
+expression: ($) =>
+  choice(
+    $.keyword,
+  ),
+
 
 ; Functions
 (function_decl

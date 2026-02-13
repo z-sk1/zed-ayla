@@ -1,39 +1,31 @@
-"enum" @keyword.declaration
-"struct" @keyword.declaration
-"fun" @keyword.declaration
-"egg" @keyword.declaration
+; Keywords
+"struct" @keyword
+"fun" @keyword
 
-"when" @keyword.control
-"otherwise" @keyword.control
-"range" @keyword.control
-"spawn" @keyword.control
-"with" @keyword.control
-"in" @keyword.control
-
+; Types
 (type_identifier) @type
-
-(enum_decl
-  name: (type_identifier) @type.definition)
 
 (struct_decl
   name: (type_identifier) @type.definition)
 
-(identifier) @variable
-
-(member_expression
-  "." @punctuation.delimiter
-  (identifier) @variable.other.member)
-
+; Functions
 (function_decl
   name: (identifier) @function.definition)
 
 (call_expression
   function: (identifier) @function.call)
 
+; Variables
+(identifier) @variable
+
+(member_expression
+  property: (identifier) @variable.other.member)
+
+; Literals
 (string) @string
 (number) @number
 (boolean) @constant.builtin
 (nil) @constant.builtin
 
-
+; Comments
 (comment) @comment

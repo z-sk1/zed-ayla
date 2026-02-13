@@ -8,28 +8,33 @@ module.exports = grammar({
   rules: {
     source_file: ($) => repeat($._statement),
 
-    _statement: ($) =>
-      choice(
-        $.enum_decl,
-        $.struct_decl,
-        $.function_decl,
-        $.var_decl,
-        $.expression,
-      ),
-
-    enum_decl: ($) =>
-      seq("enum", $.type_identifier, "{", repeat($.identifier), "}"),
+    _statement: ($) => choice($.struct_decl, $.function_decl, $.expression),
 
     struct_decl: ($) =>
-      seq("struct", $.type_identifier, "{", repeat($.struct_field), "}"),
+      seq(
+        "struct",
+        field("name", $.type_identifier),
+        "{",
+        repeat($.struct_field),
+        "}",
+      ),
 
-    struct_field: ($) => seq($.identifier, $.type_identifier),
+    struct_field: ($) =>
+      seq(field("name", $.identifier), field("type", $.type_identifier)),
 
     function_decl: ($) =>
-      seq("fun", $.identifier, "(", optional($.parameter_list), ")", $.block),
+      seq(
+        "fun",
+        field("name", $.identifier),
+        "(",
+        optional($.parameter_list),
+        ")",
+        $.block,
+      ),
 
-    var_decl: ($) =>
-      seq("egg", $.identifier, optional($.type_identifier), "=", $.expression),
+    parameter_list: ($) => seq($.identifier, repeat(seq(",", $.identifier))),
+
+    block: ($) => seq("{", repeat($._statement), "}"),
 
     expression: ($) =>
       choice(
@@ -43,29 +48,28 @@ module.exports = grammar({
       ),
 
     call_expression: ($) =>
-      seq($.identifier, "(", optional($.argument_list), ")"),
+      seq(field("function", $.identifier), "(", optional($.argument_list), ")"),
 
-    member_expression: ($) => seq($.expression, ".", $.identifier),
+    member_expression: ($) =>
+      seq($.expression, ".", field("property", $.identifier)),
 
     argument_list: ($) => seq($.expression, repeat(seq(",", $.expression))),
 
-    parameter_list: ($) => seq($.identifier, repeat(seq(",", $.identifier))),
-
-    block: ($) => seq("{", repeat($._statement), "}"),
-
     identifier: ($) => /[a-z_][a-zA-Z0-9_]*/,
+
     type_identifier: ($) => /[A-Z][a-zA-Z0-9_]*/,
 
     number: ($) => /\d+/,
+
     string: ($) => /"[^"]*"/,
 
     boolean: ($) => choice("yes", "no"),
+
     nil: ($) => "nil",
 
     comment: ($) =>
-      choice(
-        token(seq("//", /.*/)),
-        token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
+      token(
+        choice(seq("//", /.*/), seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
       ),
   },
 });

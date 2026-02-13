@@ -1,20 +1,18 @@
 id = "ayla"
-name = "ayla"
-version = "0.1.0"
+name = "Ayla"
+version = "0.0.1"
 schema_version = 1
 authors = ["Ziad Skafi"]
-description = "Language support for the ayla programming language"
+description = "Language support for the Ayla programming language"
 repository = "https://github.com/z-sk1/zed-ayla"
 
-[language]
+languages = ["languages/ayla"]
+themes = []
+icon_themes = []
+capabilities = []
+
+[grammars.ayla]
 name = "ayla"
-scope = "source.ayla"
-file_extensions = ["ayla", "ayl"]
-
-[language_servers.elen]
-name = "elen"
-command = "elen"
-args = []
-
-[languages.ayla]
-language_servers = ["elen"]
+repository = "grammars/ayla"
+path = "."
+rev = "HEAD"

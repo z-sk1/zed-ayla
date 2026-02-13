@@ -13,6 +13,5 @@ capabilities = []
 
 [grammars.ayla]
 name = "ayla"
-repository = "."
+repository = "https://github.com/z-sk1/tree-sitter-ayla"
 rev = "HEAD"
-path = "grammars/ayla"

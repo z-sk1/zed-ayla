@@ -13,6 +13,6 @@ capabilities = []
 
 [grammars.ayla]
 name = "ayla"
-repository = "grammars/ayla"
-path = "."
+repository = "."
 rev = "HEAD"
+path = "grammars/ayla"

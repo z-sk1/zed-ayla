@@ -1,9 +1,6 @@
 ; Keywords
 "struct" @keyword
 "fun" @keyword
-"yes" @constant.builtin
-"no" @constant.builtin
-"nil" @constant.builtin
 
 ; Types
 (type_identifier) @type

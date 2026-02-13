@@ -2,3 +2,4 @@ name = "Ayla"
 grammar = "ayla"
 scope = "source.ayla"
 file_extensions = ["ayla", "ayl"]
+path_suffixes = ["ayla", "ayl"]

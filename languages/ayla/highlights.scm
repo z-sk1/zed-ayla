@@ -1,4 +1,4 @@
-keyword: $ => choice(
+(keyword: $ => choice(
   "egg",
   "rock",
   "fun",
@@ -26,9 +26,7 @@ keyword: $ => choice(
   "it",
   "in",
   "range"
-),
-
-(keyword) @keyword
+)) @keyword
 
 (boolean) @constant.builtin
 (nil) @constant.builtin
@@ -37,12 +35,6 @@ keyword: $ => choice(
 (type_identifier) @type
 (struct_decl
   name: (type_identifier) @type.definition)
-
-expression: ($) =>
-  choice(
-    $.keyword,
-  ),
-
 
 ; Functions
 (function_decl

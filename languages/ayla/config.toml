@@ -2,3 +2,9 @@ name = "Ayla"
 grammar = "ayla"
 scope = "source.ayla"
 path_suffixes = ["ayla", "ayl"]
+
+brackets = [
+  { start = "{", end = "}", close = true, newline = true },
+  { start = "(", end = ")", close = true },
+  { start = "[", end = "]", close = true }
+]

@@ -1,3 +1,8 @@
+; Variables
+(identifier) @variable
+(member_expression
+  property: (identifier) @variable.other.member)
+
 (keyword) @keyword
 
 (boolean) @constant.builtin
@@ -39,12 +44,6 @@
 
 (return_type
   type: (primitive_type) @type.builtin)
-
-
-; Variables
-(identifier) @variable
-(member_expression
-  property: (identifier) @variable.other.member)
 
 ; Literals
 (string) @string

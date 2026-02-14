@@ -1,11 +1,4 @@
 name = "Ayla"
 grammar = "ayla"
 scope = "source.ayla"
-file_extensions = ["ayla", "ayl"]
 path_suffixes = ["ayla", "ayl"]
-brackets = [
-  { start = "{", end = "}" },
-  { start = "[", end = "]" },
-  { start = "(", end = ")" }
-]
-auto_close_before = ";:.,=}])>"

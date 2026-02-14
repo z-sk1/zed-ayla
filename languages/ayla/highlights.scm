@@ -25,8 +25,10 @@
 (struct_field
   type: (primitive_type) @type.builtin)
 
-
 ; Functions
+(function_decl
+  "fun" @keyword)
+
 (function_decl
   name: (identifier) @function.definition)
 

@@ -3,7 +3,11 @@
 (member_expression
   property: (identifier) @variable.other.member)
 
-(keyword) @keyword
+"fun" @keyword
+"struct" @keyword
+"enum" @keyword
+"type" @keyword
+
 
 (boolean) @constant.builtin
 (nil) @constant.builtin

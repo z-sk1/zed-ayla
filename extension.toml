@@ -15,3 +15,4 @@ capabilities = []
 name = "ayla"
 repository = "https://github.com/z-sk1/tree-sitter-ayla"
 rev = "main"
+

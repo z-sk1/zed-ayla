@@ -4,9 +4,22 @@
 (nil) @constant.builtin
 
 ; Types
+(primitive_type) @type.builtin
 (type_identifier) @type
+
+; Structs
 (struct_decl
   name: (type_identifier) @type.definition)
+
+(struct_field
+  name: (identifier) @variable.other.member)
+
+(struct_field
+  type: (type_identifier) @type)
+
+(struct_field
+  type: (primitive_type) @type.builtin)
+
 
 ; Functions
 (function_decl

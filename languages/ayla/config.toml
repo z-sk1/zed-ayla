@@ -8,3 +8,6 @@ brackets = [
   { start = "(", end = ")", close = true, newline = false },
   { start = "[", end = "]", close = true, newline = false }
 ]
+
+increase_indent_pattern = "{"
+decrease_indent_pattern = "}"

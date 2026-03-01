@@ -2,9 +2,11 @@ name = "Ayla"
 grammar = "ayla"
 scope = "source.ayla"
 path_suffixes = ["ayla", "ayl"]
+language_servers = ["ayla"]
 
 brackets = [
   { start = "{", end = "}", close = true, newline = true },
   { start = "(", end = ")", close = true, newline = false },
-  { start = "[", end = "]", close = true, newline = false }
+  { start = "[", end = "]", close = true, newline = false },
+  { start = '"', end = '"', close = true, newline = false}
 ]

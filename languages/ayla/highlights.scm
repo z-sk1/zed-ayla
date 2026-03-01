@@ -32,6 +32,15 @@
 (function_decl
   name: (identifier) @function.definition)
 
+(parameter
+    name: (identifier) @variable.parameter)
+
+(parameter
+    type: (primitive_type) @type.builtin)
+
+(parameter
+    type: (type_identifier) @type)
+
 (call_expression
   function: (identifier) @function.call)
 

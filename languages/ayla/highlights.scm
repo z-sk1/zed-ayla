@@ -8,8 +8,6 @@
 (boolean) @constant.builtin
 (nil) @constant.builtin
 
-(binary_expression operator: (_) @operator)
-;(unary_expression operator: (_) @operator)
 
 ; Types
 (primitive_type) @type.builtin
@@ -65,3 +63,26 @@
 
 ; Comments
 (comment) @comment
+
+
+[
+  "+"
+  "-"
+  "*"
+  "/"
+  "%"
+  "&&"
+  "||"
+  "|"
+  "&"
+  "^"
+  "<<"
+  ">>"
+  "="
+  "=="
+  "!="
+  "<"
+  ">"
+  "<="
+  ">="
+] @operator

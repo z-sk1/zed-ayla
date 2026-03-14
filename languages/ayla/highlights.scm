@@ -8,6 +8,8 @@
 (boolean) @constant.builtin
 (nil) @constant.builtin
 
+(binary_expression operator: (_) @operator)
+
 ; Types
 (primitive_type) @type.builtin
 (type_identifier) @type

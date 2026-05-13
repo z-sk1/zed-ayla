@@ -1,7 +1,13 @@
+id = "ayla"
 name = "Ayla"
 grammar = "ayla"
-scope = "source.ayla"
 path_suffixes = ["ayla", "ayl"]
+scope = "source.ayla"
+
+line_comments = ["//"]
+multiline_comments = ["/*", "*/"]
+
+language_servers = ["elen"]
 
 brackets = [
   { start = "{", end = "}", close = true, newline = true },

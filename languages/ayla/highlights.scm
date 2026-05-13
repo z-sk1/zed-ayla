@@ -4,10 +4,10 @@
   property: (identifier) @variable.other.member)
 
 (keyword) @keyword
+(operator) @operator
 
 (boolean) @constant.builtin
 (nil) @constant.builtin
-
 
 ; Types
 (primitive_type) @type.builtin
@@ -63,26 +63,3 @@
 
 ; Comments
 (comment) @comment
-
-
-[
-  "+"
-  "-"
-  "*"
-  "/"
-  "%"
-  "&&"
-  "||"
-  "|"
-  "&"
-  "^"
-  "<<"
-  ">>"
-  "="
-  "=="
-  "!="
-  "<"
-  ">"
-  "<="
-  ">="
-] @operator

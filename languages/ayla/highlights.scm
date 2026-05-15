@@ -3,7 +3,6 @@
 (member_expression
   property: (identifier) @variable.other.member)
 
-(keyword) @keyword
 (operator) @operator
 
 (boolean) @constant.builtin
@@ -63,3 +62,8 @@
 
 ; Comments
 (comment) @comment
+
+(
+  (identifier) @keyword
+  (#match? @keyword "^(say|keep|import|type|struct|enum|interface|ayla|elen|choose|select|when|otherwise|with|map|fun|give|defer|start|chan|int|float|string|bool|for|range|while|snap|next|yes|no|nil)")
+)
